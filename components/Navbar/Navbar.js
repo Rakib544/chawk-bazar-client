@@ -1,9 +1,9 @@
 import React from 'react';
-import '../../styles/nav.module.css';
+import style from '../../styles/nav.module.css'
 
 const Navbar = () => {
     return (
-        <na className="nav">
+        <nav className={style.nav}>
             <div>
                 <h2>site name</h2>
             </div>
@@ -11,7 +11,7 @@ const Navbar = () => {
                 <p>shopping cart</p>
                 <p>Login</p>
             </div>
-        </na>
+        </nav>
     );
 };
 
