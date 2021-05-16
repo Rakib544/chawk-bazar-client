@@ -4,7 +4,8 @@ export const getProducts = () => async (dispatch) => {
     try {
         dispatch({type: actionTypes.GET_PRODUCTS_REQUEST})
 
-        const {data} = 'data will be fetching here'
+        const res = await fetch('http://localhost:8080/products')
+        const data = await res.json();
 
         dispatch({
             type: actionTypes.GET_PRODUCTS_SUCCESS,
