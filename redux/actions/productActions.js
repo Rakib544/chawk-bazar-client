@@ -25,8 +25,11 @@ export const getProductDetails = (id) => async (dispatch) => {
     try {
         dispatch({type: actionTypes.GET_PRODUCT_DETAILS_REQUEST})
 
-        const {data} = 'data will be fetching here';
+        console.log('rakib2', id)
 
+        const res = await fetch(`http://localhost:8080/product/${id}`)
+        const data = await res.json();
+        console.log('rakib', data)
         dispatch({
             type: actionTypes.GET_PRODUCT_DETAILS_SUCCESS,
             payload: data

@@ -10,7 +10,7 @@ export default function Home() {
 
   const productsList = useSelector(state => state.getProducts)
   const {products, error, loading} = productsList;
-  
+  console.log(products)
   return (
     <>
       <h2>Hello World!</h2>
