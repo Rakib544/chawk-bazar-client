@@ -1,5 +1,9 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
+import Banner from '../components/Banner/Banner';
+import Footer from '../components/Footer/Footer';
+import Navbar from '../components/Navbar/Navbar';
+import Products from '../components/Products/Products';
 import {getProducts} from '../redux/actions/productActions';
 
 export default function Home() {
@@ -9,14 +13,13 @@ export default function Home() {
   }, [])
 
   const productsList = useSelector(state => state.getProducts)
-  const {products, error, loading} = productsList;
-  console.log(products)
+  console.log(productsList)
   return (
     <>
-      <h2>Hello World!</h2>
-      {
-        products.length
-      }
+      <Navbar />
+      <Banner />
+      <Products productsList={productsList} />
+      <Footer />
     </>
   )
 }
